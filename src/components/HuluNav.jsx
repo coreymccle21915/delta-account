@@ -1,0 +1,20 @@
+import { useApp } from '../context/AppContext'
+
+export default function HuluNav() {
+  const { user } = useApp()
+  const initials = user.name.split(' ').map(n => n[0]).join('').slice(0, 2)
+  return (
+    <nav style={{ background: 'white', height: 72, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 80px', flexShrink: 0 }}
+      className="responsive-nav">
+      <svg width="60" height="40" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M47.8345 12.9705V19.7616C47.8345 22.2581 46.4123 23.9804 44.0365 23.9804V24H40.317C37.7391 24 35.9944 22.5386 35.9944 19.7616V12.9705H39.7924V19.439C39.7924 20.0112 40.2468 20.4769 40.8107 20.4769H43.021C43.582 20.4769 44.0365 20.014 44.0365 19.439V12.9705H47.8345ZM29.2903 24H33.1164V8H29.2903V23.9972V24ZM22.6311 19.439C22.6311 20.0112 22.1767 20.4769 21.6157 20.4769H19.4053C18.8443 20.4769 18.3871 20.014 18.3871 19.439V12.9705H14.5891V19.7616C14.5891 22.5386 16.3338 24 18.9116 24H22.6311V23.9804C25.007 23.9804 26.4292 22.2609 26.4292 19.7616V12.9705H22.6311V19.439ZM7.51473 12.993H5.07995C4.22441 12.993 3.79523 13.2258 3.79523 13.2258V8H0V23.9972H3.79523V17.5428C3.79523 16.9705 4.25246 16.5105 4.81346 16.5105H7.02384C7.58766 16.5105 8.04208 16.9734 8.04208 17.5428V23.9972H11.8401V17.0407C11.8401 14.115 9.92146 12.9902 7.51754 12.9902L7.51473 12.993Z" fill="#00BF6F"/>
+      </svg>
+      <button style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, fontWeight: 400, color: '#252526', background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'inherit' }}>
+        {user.name.split(' ')[0]}
+        <div style={{ width: 32, height: 32, borderRadius: '50%', background: '#252526', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 14, fontWeight: 700 }}>
+          {initials}
+        </div>
+      </button>
+    </nav>
+  )
+}

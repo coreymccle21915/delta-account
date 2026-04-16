@@ -1,0 +1,203 @@
+import { useNavigate } from 'react-router-dom'
+import DisneyNav from '../../components/DisneyNav'
+import { useApp } from '../../context/AppContext'
+
+const ChevronRight = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
+    <path d="M9 18L15 12L9 6" stroke="#b7b8bd" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+)
+
+const Divider = () => (
+  <div style={{ padding: '0 24px', margin: 0 }}>
+    <div style={{ height: 1, background: '#4b4e5a', opacity: 0.5 }} />
+  </div>
+)
+
+export default function AccountL1() {
+  const navigate = useNavigate()
+  const { user } = useApp()
+
+  const sp = 16 // account list space px
+
+  return (
+    <div style={{ fontFamily: 'InspireTWDC, system-ui, sans-serif', background: '#17171b', color: '#f9f9f9', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <DisneyNav />
+
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '24px 80px 80px' }} className="page-body-responsive">
+        <div style={{ width: '100%', maxWidth: 628 }}>
+
+          {/* Heading */}
+          <div style={{ paddingBottom: 20 }}>
+            <h1 style={{ fontSize: 32, fontWeight: 600, lineHeight: '40px', letterSpacing: 0, color: '#f9f9f9' }}>
+              Manage Your Account
+            </h1>
+          </div>
+
+          {/* Card Stack */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 24, width: '100%' }}>
+
+            {/* MyDisney Card */}
+            <div style={{ background: '#1e1f24', borderRadius: 12, overflow: 'hidden', width: '100%' }}>
+              <div style={{ background: '#2d2f36', padding: '8px 24px', display: 'flex', alignItems: 'center' }}>
+                <svg width="69.429" height="30" viewBox="0 0 87 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M49.192 17.7939C49.1731 17.1395 48.5471 16.0909 48.1103 16.1051C47.7634 16.1162 47.4623 16.3558 47.3393 17.4801C47.2163 18.6043 47.1721 20.4019 47.1406 21.3401C47.1075 22.2783 47.1643 24.1531 47.2273 24.8138C47.2904 25.4745 47.6405 25.9207 48.391 25.8986C49.1416 25.8765 49.2992 25.6605 49.3639 25.2237C49.4285 24.787 49.4601 23.8425 49.4144 22.857C49.3686 21.8715 49.2125 18.4498 49.192 17.7939Z" fill="#B7B8BD"/>
+                  <path d="M28.4888 6.00095C27.0208 5.78335 25.2816 5.65878 24.2582 5.68874C21.4957 5.77073 19.8384 6.39988 19.4979 6.52917C18.9996 6.71839 18.1844 7.88206 18.1954 8.25419C18.2112 8.76507 18.8403 9.12931 19.676 9.10408C20.1333 9.08989 20.8791 9.04259 20.8697 8.69727C20.8586 8.35195 19.5625 8.28415 19.5578 8.10912C19.5499 7.84738 21.1535 7.5604 23.8262 7.48156C30.6111 7.27973 43.276 13.1643 43.4668 19.5709C43.6024 24.1562 37.4986 25.1307 34.8275 25.2095C33.6922 25.2426 32.5332 25.1149 31.409 24.8768C31.3885 23.4656 31.3475 21.7736 31.3286 21.1193C31.3081 20.4381 31.3191 19.4242 31.3223 18.5838C33.801 18.5996 37.8234 19.0269 37.8518 20.0013C37.8707 20.6478 36.42 20.7408 36.4311 21.1414C36.4374 21.3495 37.2274 21.7342 37.9022 21.7137C38.5771 21.6932 39.8622 20.9506 39.8196 19.4983C39.7644 17.6251 36.7323 16.042 31.6723 16.1934L31.3995 16.2028C31.3964 15.8906 31.3759 14.1404 31.163 13.1801C30.9296 12.1236 30.3131 11.433 30.0151 11.4409C29.274 11.463 29.0359 15.0376 28.9854 16.4409C25.3793 17.0007 22.2967 18.4151 22.3471 20.1101C22.3818 21.2486 24.7927 24.1341 28.7962 25.9096C28.9192 27.0133 29.2456 28.3694 30.0829 28.3442C31.4516 28.3032 31.379 27.7923 31.4121 26.8273C32.8912 27.2152 34.5153 27.4312 36.2624 27.3792C42.8928 27.1821 46.2892 23.4939 46.1725 19.563C46.0007 13.784 37.0318 7.26869 28.4872 6.00252L28.4888 6.00095ZM28.7663 24.1057C25.6269 22.9421 23.2364 21.1571 23.2081 20.2284C23.1813 19.3407 26.4263 18.8692 28.9618 18.68C28.9476 20.189 28.9113 22.2041 28.7663 24.1057Z" fill="#B7B8BD"/>
+                  <path d="M54.3435 10.0532C54.3183 9.21123 53.7727 8.39602 52.4529 8.41652C52.3284 8.10589 51.9105 7.47833 50.4205 7.52248C47.1738 7.61866 44.6762 10.0233 44.7314 11.9186C44.7503 12.5351 45.0467 13.0744 45.4835 13.5159C45.37 13.8249 45.3589 14.0331 45.3621 14.1513C45.3715 14.4809 45.8667 15.3497 46.2482 15.3387C46.5699 15.3292 46.7891 15.028 47.0997 14.5392C47.6295 14.7442 48.1562 14.8483 48.5756 14.8357C51.6283 14.7442 54.3987 11.8839 54.3435 10.0532ZM47.2952 10.7991C46.8585 11.2894 46.5116 11.7215 46.2561 12.0983C46.2104 12.0211 46.1663 11.8997 46.1599 11.7089C46.1473 11.2894 46.8711 9.68269 48.6923 9.55024C48.2287 9.86875 47.7588 10.2756 47.2952 10.7975V10.7991ZM52.177 9.76468C52.7667 9.74734 52.9213 10.1116 52.9339 10.5152C52.9528 11.1428 51.8159 12.9766 49.2552 13.0523C48.6939 13.0697 48.2208 13.0271 47.8424 12.964C48.2177 12.4326 50.1666 9.8246 52.1754 9.76468H52.177Z" fill="#B7B8BD"/>
+                  <path d="M56.0304 15.9285C54.2423 15.9821 50.9153 16.5482 50.4391 18.1739C50.212 18.9512 50.119 19.891 50.7765 20.3073C51.434 20.7235 53.3593 20.7141 54.6428 20.7803C55.9263 20.8465 58.1449 21.1997 58.167 21.9251C58.1827 22.4722 57.2461 23.4908 54.154 23.5838C50.6835 23.6863 51.6548 22.2152 52.3486 22.1947C53.5643 22.1584 53.4602 23.0162 55.57 22.9531C56.0367 22.9389 57.0932 22.674 57.0774 22.1584C57.0585 21.523 54.6649 20.9648 53.1181 21.0105C51.5728 21.0562 50.6519 21.8494 50.6788 22.7434C50.7087 23.7494 52.1294 25.7299 55.5763 25.6274C56.7195 25.5943 58.2111 25.0266 58.6558 24.8185C59.0058 24.6545 59.7816 24.2209 59.7217 22.1679C59.6444 19.5677 57.0632 19.5078 55.4565 19.4101C53.8923 19.3155 52.1877 19.2335 52.1767 18.8629C52.1562 18.1628 57.8311 17.9216 58.9554 17.808C59.9093 17.7119 60.0843 17.0133 60.0749 16.6791C60.0575 16.1083 57.8185 15.8765 56.0304 15.9285Z" fill="#B7B8BD"/>
+                  <path d="M65.474 14.5282C64.58 14.555 65.5308 16.187 66.141 19.3516C66.4106 20.7502 66.7276 22.018 66.3018 22.0306C65.8745 22.0432 63.3438 16.567 62.1344 16.6017C60.6443 16.6458 60.146 21.8177 60.1902 23.3393C60.2359 24.861 60.5891 25.632 61.3933 25.6084C61.9246 25.5926 62.2558 25.0833 62.3157 24.1309C62.3756 23.1785 62.3945 20.0186 62.62 20.0123C63.0394 19.9997 64.8827 25.1101 66.5021 25.0628C68.2098 25.0123 68.4747 22.5462 68.4179 20.6619C68.2981 16.6048 66.1315 14.5093 65.4709 14.5282H65.474Z" fill="#B7B8BD"/>
+                  <path d="M75.039 22.625C74.3704 22.6455 72.7432 22.9514 72.144 23.1217C71.5448 23.292 71.0796 23.3945 71.2279 22.9309C71.3461 22.5619 71.6063 21.6852 71.7072 21.3447L74.763 21.2532C75.3591 21.2359 75.3906 20.9363 75.4411 20.1936C75.4915 19.4509 74.9869 19.5455 74.4146 19.5629C74.4146 19.5629 73.4023 19.6039 72.3206 19.6575L72.8047 18.3677C73.9163 18.3267 75.0752 18.2053 75.7927 18.1848C77.1945 18.1438 77.3285 17.7843 77.3238 17.6392C77.319 17.4941 77.1787 17.1204 76.8097 16.5906C76.4392 16.0624 76.1096 15.8385 74.9507 15.8716C73.8721 15.9031 69.208 16.2831 69.2269 16.9202C69.2348 17.2103 69.6463 17.8568 70.173 18.1091C70.3669 18.2021 70.6176 18.2652 70.9078 18.3077L70.1919 19.7836C70.0894 19.7915 70.0027 19.801 69.9333 19.8089C69.0661 19.9066 69.301 20.4806 69.3972 21.0009C69.4398 21.2311 69.495 21.3368 69.5659 21.3825C69.2711 22.1819 68.962 23.2116 68.9857 23.9795C69.0282 25.4286 70.2865 26.2375 71.2121 26.2091C73.3707 26.1444 75.4379 24.3989 75.8211 24.0331C76.2042 23.6673 75.706 22.6029 75.0374 22.6219L75.039 22.625Z" fill="#B7B8BD"/>
+                  <path d="M86.2086 19.3895C86.1581 17.685 85.5053 16.4756 84.4126 16.5072C82.8137 16.5545 80.5163 18.9717 78.6699 22.0039C78.5043 20.7724 79.4756 18.8787 80.3035 17.5526C80.8853 16.6223 80.7828 15.5154 80.5416 15.5232C80.2026 15.5327 76.9291 18.3063 77.0411 22.1095C77.0631 22.8475 77.2555 23.4687 77.5756 23.9749C76.3236 26.4441 75.4816 29.0616 75.54 31.0326C75.6062 33.2527 76.9685 34.0806 77.3832 34.0679C77.7979 34.0553 77.8184 33.3994 77.8925 32.909C78.3135 30.137 79.0405 27.6803 79.8698 25.6163C80.1978 25.6983 80.5226 25.7377 80.8238 25.7283C83.3625 25.6526 86.3048 22.6188 86.2086 19.3895ZM80.9626 23.2054C82.4905 20.2158 84.0673 18.5128 84.6223 18.4955C85.5842 18.4671 84.7705 22.8143 80.9626 23.2054Z" fill="#B7B8BD"/>
+                  <path d="M20.7465 17.3571C20.5715 17.201 20.3665 17.1206 20.1363 17.1206C19.9786 17.1206 19.8273 17.1632 19.6885 17.2483C19.5466 17.335 19.4378 17.4707 19.3668 17.6488L16.9449 23.0415C16.9275 23.0793 16.896 23.1487 16.8645 23.2149C16.844 23.1487 16.8219 23.0825 16.8077 23.0462C16.7888 22.9958 16.7194 22.8523 16.7194 22.8523L14.3668 17.6315C14.2091 17.2925 13.9442 17.1206 13.58 17.1206C13.1306 17.1096 12.6213 17.4738 12.6371 17.9468C12.6371 18.0698 12.6623 18.1739 12.7112 18.2796L15.9058 25.0661C15.7055 25.4902 15.5068 25.9144 15.3066 26.3386C14.9881 27.0166 14.6696 27.693 14.3495 28.3711C14.2091 28.6675 14.0641 28.9497 14.0672 29.2698C14.0593 29.7208 14.3905 30.1024 14.8572 30.0913C15.3933 30.0913 15.6677 29.459 15.6677 29.459L20.9389 18.278C20.9878 18.1692 21.013 18.0509 21.013 17.9295C21.013 17.7088 20.9231 17.5148 20.745 17.3555L20.7465 17.3571Z" fill="#B7B8BD"/>
+                  <path d="M11.1464 14.1135C10.9761 13.9369 10.7553 13.8486 10.4904 13.8486C10.1167 13.8486 9.81399 14.0647 9.59008 14.4888L5.8578 21.627C5.8578 21.627 5.79 21.7484 5.77108 21.7925C5.75216 21.8367 5.72062 21.9076 5.7017 21.9518C5.68278 21.9092 5.64967 21.8367 5.63232 21.7925C5.61498 21.75 5.5456 21.627 5.5456 21.627L1.81174 14.4888C1.58783 14.0631 1.28351 13.8486 0.911389 13.8486C0.646487 13.8486 0.425735 13.9385 0.255441 14.1135C0.0867238 14.2886 0 14.5172 0 14.7916V25.0045C0 25.2678 0.0772631 25.4838 0.228636 25.6478C0.381585 25.8134 0.589722 25.8969 0.843587 25.8969C1.09745 25.8969 1.3182 25.8149 1.46642 25.6557C1.61306 25.498 1.68717 25.2773 1.68717 25.0029V17.7528L1.68402 17.6014L1.76286 17.7906L4.81554 23.5097C5.03944 23.9228 5.33746 24.1325 5.70012 24.1325C6.06279 24.1325 6.3608 23.9228 6.58471 23.5097L9.63739 17.7906L9.71623 17.6014L9.71307 17.7528V25.0029C9.71307 25.2773 9.78718 25.4964 9.93382 25.6557C10.082 25.8165 10.2918 25.8969 10.5567 25.8969C10.8216 25.8969 11.0187 25.8134 11.1716 25.6478C11.323 25.4838 11.4002 25.2678 11.4002 25.0045V14.7916C11.4002 14.5172 11.3151 14.2886 11.1448 14.1135H11.1464Z" fill="#B7B8BD"/>
+                </svg>
+              </div>
+              <div style={{ padding: `0 24px` }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 24, paddingTop: sp, paddingBottom: sp }}>
+                  <div style={{ flex: 1 }}>
+                    <span style={{ fontSize: 16, fontWeight: 600, lineHeight: '24px', letterSpacing: '0.16px', color: '#f9f9f9' }}>
+                      {user.email}<br />Password: ••••••
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <Divider />
+              <div
+                onClick={() => navigate('/')}
+                style={{ fontSize: 14, fontWeight: 700, lineHeight: '16px', letterSpacing: '0.16px', color: '#33ddff', textAlign: 'center', cursor: 'pointer', padding: `${sp}px 24px` }}
+              >
+                Manage with MyDisney
+              </div>
+            </div>
+
+            {/* Subscriptions & Billing Card */}
+            <div style={{ background: '#1e1f24', borderRadius: 12, overflow: 'hidden', width: '100%' }}>
+              <div style={{ background: '#2d2f36', padding: '8px 24px', display: 'flex', alignItems: 'center' }}>
+                <span style={{ fontSize: 16, fontWeight: 600, lineHeight: '24px', letterSpacing: 0, color: '#b7b8bd', flex: 1 }}>Subscriptions &amp; Billing</span>
+              </div>
+
+              {/* Hulu row */}
+              <div
+                style={{ padding: '0 24px', cursor: 'pointer' }}
+                onClick={() => navigate('/subscription')}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: 24, paddingTop: sp, paddingBottom: sp }}>
+                  <div style={{ flex: 1 }}>
+                    <div style={{ fontSize: 16, fontWeight: 600, lineHeight: '24px', letterSpacing: '0.16px', color: '#f9f9f9', marginBottom: 4 }}>
+                      Hulu Premium
+                    </div>
+                    <div style={{ fontSize: 14, fontWeight: 400, lineHeight: '20px', color: '#b7b8bd' }}>
+                      HBO Max (No Ads)
+                    </div>
+                  </div>
+                  <ChevronRight />
+                </div>
+              </div>
+
+              <Divider />
+
+              {/* Billing History row */}
+              <div
+                style={{ padding: '0 24px', cursor: 'pointer' }}
+                onClick={() => navigate('/billing')}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: 24, paddingTop: sp, paddingBottom: sp }}>
+                  <div style={{ flex: 1 }}>
+                    <span style={{ fontSize: 16, fontWeight: 600, lineHeight: '24px', letterSpacing: '0.16px', color: '#f9f9f9' }}>Billing History</span>
+                  </div>
+                  <ChevronRight />
+                </div>
+              </div>
+            </div>
+
+            {/* Access & Security Card */}
+            <div style={{ background: '#1e1f24', borderRadius: 12, overflow: 'hidden', width: '100%' }}>
+              <div style={{ background: '#2d2f36', padding: '8px 24px', display: 'flex', alignItems: 'center' }}>
+                <span style={{ fontSize: 16, fontWeight: 600, lineHeight: '24px', letterSpacing: 0, color: '#b7b8bd', flex: 1 }}>Access &amp; Security</span>
+              </div>
+
+              <div style={{ padding: '0 24px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 24, paddingTop: sp, paddingBottom: sp }}>
+                  <div style={{ flex: 1 }}>
+                    <div style={{ fontSize: 16, fontWeight: 600, lineHeight: '24px', letterSpacing: '0.16px', color: '#f9f9f9' }}>Restrict Profile Creation</div>
+                    <div style={{ fontSize: 14, fontWeight: 400, lineHeight: '20px', color: '#b7b8bd', paddingTop: 8 }}>Creating new profiles will require a password.</div>
+                  </div>
+                  <Toggle defaultChecked />
+                </div>
+              </div>
+
+              <Divider />
+              <div style={{ fontSize: 14, fontWeight: 400, lineHeight: '20px', color: '#b7b8bd', padding: `${sp}px 24px` }}>
+                To manage parental controls for profiles on your account, visit Edit Profiles and select a profile.
+              </div>
+              <Divider />
+
+              <div style={{ padding: '0 24px', cursor: 'pointer' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 24, paddingTop: sp, paddingBottom: sp }}>
+                  <div style={{ flex: 1 }}>
+                    <span style={{ fontSize: 16, fontWeight: 600, lineHeight: '24px', letterSpacing: '0.16px', color: '#f9f9f9' }}>Manage Devices</span>
+                  </div>
+                  <ChevronRight />
+                </div>
+              </div>
+            </div>
+
+            {/* Privacy & Data Card */}
+            <div style={{ background: '#1e1f24', borderRadius: 12, overflow: 'hidden', width: '100%' }}>
+              <div style={{ background: '#2d2f36', padding: '8px 24px', display: 'flex', alignItems: 'center' }}>
+                <span style={{ fontSize: 16, fontWeight: 600, lineHeight: '24px', letterSpacing: 0, color: '#b7b8bd', flex: 1 }}>Privacy &amp; Data</span>
+              </div>
+
+              <div style={{ padding: '0 24px', cursor: 'pointer' }} onClick={() => navigate('/nielsen')}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 24, paddingTop: sp, paddingBottom: sp }}>
+                  <div style={{ flex: 1 }}>
+                    <span style={{ fontSize: 16, fontWeight: 600, lineHeight: '24px', letterSpacing: '0.16px', color: '#f9f9f9' }}>Manage Nielsen Measurement</span>
+                  </div>
+                  <ChevronRight />
+                </div>
+              </div>
+
+              <Divider />
+
+              <div style={{ padding: '0 24px', cursor: 'pointer' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 24, paddingTop: sp, paddingBottom: sp }}>
+                  <div style={{ flex: 1 }}>
+                    <span style={{ fontSize: 16, fontWeight: 600, lineHeight: '24px', letterSpacing: '0.16px', color: '#f9f9f9' }}>Delete Account</span>
+                  </div>
+                  <ChevronRight />
+                </div>
+              </div>
+            </div>
+
+            {/* Footer */}
+            <div>
+              <div style={{ height: 1, background: '#4b4e5a', opacity: 0.4, marginBottom: 16 }} />
+              <p style={{ fontSize: 12, fontWeight: 400, lineHeight: '16px', color: '#b7b8bd' }}>
+                To manage or delete your Walt Disney Company Account, please visit our{' '}
+                <a href="#" style={{ color: '#33ddff' }}>Account Management FAQ</a>
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function Toggle({ defaultChecked }) {
+  return (
+    <label style={{ position: 'relative', width: 52, height: 32, flexShrink: 0, display: 'inline-block', cursor: 'pointer' }}>
+      <style>{`
+        .toggle-input { position: absolute; opacity: 0; width: 0; height: 0; }
+        .toggle-track { position: absolute; left: 10px; top: 9px; width: 32px; height: 14px; background: #4b4e5a; border-radius: 1000px; transition: background 0.2s; }
+        .toggle-input:checked ~ .toggle-track { background: #056D84; }
+        .toggle-thumb { position: absolute; left: 8px; top: 6px; width: 20px; height: 20px; border-radius: 1000px; background: #b7b8bd; boxShadow: 0 1px 3px rgba(0,0,0,0.5); transition: left 0.2s, background 0.2s; }
+        .toggle-input:checked ~ .toggle-thumb { left: 24px; background: #f9f9f9; }
+      `}</style>
+      <input type="checkbox" className="toggle-input" defaultChecked={defaultChecked} />
+      <span className="toggle-track" />
+      <span className="toggle-thumb" />
+    </label>
+  )
+}

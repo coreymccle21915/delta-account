@@ -1,0 +1,42 @@
+module.exports = {
+  content: ['./index.html', './src/**/*.{js,jsx}'],
+  theme: {
+    extend: {
+      colors: {
+        surface: '#17171b',
+        'nav-bg': '#15181e',
+        'sc': '#1e1f24',
+        'sc-high': '#252730',
+        'sc-highest': '#2d2f36',
+        'on-surface': '#f9f9f9',
+        'on-surface-var': '#b7b8bd',
+        brand: '#056d84',
+        cyan: '#33ddff',
+        'action-blue': '#466aef',
+        outline: '#6f717b',
+        'outline-var': '#4b4e5a',
+        'sv': '#3c3e48',
+        'hulu-bg': '#f1f2f4',
+        'hulu-green': '#3DBB60',
+        'hulu-green-light': '#1CE783',
+        'hulu-cta': '#0F5ABD',
+        'hulu-ink': '#252526',
+        'hulu-muted': '#5f6166',
+        'hulu-mid': '#86898f',
+        'hulu-border': '#e9ebf0',
+        'hulu-label': '#0D0E11',
+        'hulu-field': '#e9ebf0',
+        'hulu-field-label': '#5f6166',
+      },
+      fontFamily: {
+        inspire: ['InspireTWDC', 'system-ui', 'sans-serif'],
+        graphik: ['Graphik', 'system-ui', 'sans-serif'],
+      },
+      borderRadius: {
+        card: '12px',
+        btn: '8px',
+      },
+    },
+  },
+  plugins: [],
+}

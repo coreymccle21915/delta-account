@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face { font-family: 'InspireTWDC'; src: url('/fonts/InspireTWDC-Roman.otf') format('opentype'); font-weight: 400; font-style: normal; }
+@font-face { font-family: 'InspireTWDC'; src: url('/fonts/InspireTWDC-Italic.otf') format('opentype'); font-weight: 400; font-style: italic; }
+@font-face { font-family: 'InspireTWDC'; src: url('/fonts/InspireTWDC-Medium.otf') format('opentype'); font-weight: 600; font-style: normal; }
+@font-face { font-family: 'InspireTWDC'; src: url('/fonts/InspireTWDC-MediumItalic.otf') format('opentype'); font-weight: 600; font-style: italic; }
+@font-face { font-family: 'InspireTWDC'; src: url('/fonts/InspireTWDC-Heavy.otf') format('opentype'); font-weight: 700; font-style: normal; }
+@font-face { font-family: 'InspireTWDC'; src: url('/fonts/InspireTWDC-HeavyItalic.otf') format('opentype'); font-weight: 700; font-style: italic; }
+@font-face { font-family: 'InspireTWDC'; src: url('/fonts/InspireTWDC-Black.otf') format('opentype'); font-weight: 900; font-style: normal; }
+@font-face { font-family: 'InspireTWDC'; src: url('/fonts/InspireTWDC-Light.otf') format('opentype'); font-weight: 300; font-style: normal; }
+@font-face { font-family: 'Graphik'; src: url('/fonts/Graphik-Regular-Web.woff') format('woff'); font-weight: 400; font-style: normal; }
+@font-face { font-family: 'Graphik'; src: url('/fonts/Graphik-RegularItalic-Web.woff') format('woff'); font-weight: 400; font-style: italic; }
+@font-face { font-family: 'Graphik'; src: url('/fonts/Graphik-Medium-Web.woff') format('woff'); font-weight: 500; font-style: normal; }
+@font-face { font-family: 'Graphik'; src: url('/fonts/Graphik-MediumItalic-Web.woff') format('woff'); font-weight: 500; font-style: italic; }
+@font-face { font-family: 'Graphik'; src: url('/fonts/Graphik-Semibold-Web.woff') format('woff'); font-weight: 600; font-style: normal; }
+@font-face { font-family: 'Graphik'; src: url('/fonts/Graphik-SemiboldItalic-Web.woff') format('woff'); font-weight: 600; font-style: italic; }
+@font-face { font-family: 'Graphik'; src: url('/fonts/Graphik-Bold-Web.woff') format('woff'); font-weight: 700; font-style: normal; }
+@font-face { font-family: 'Graphik'; src: url('/fonts/Graphik-BoldItalic-Web.woff') format('woff'); font-weight: 700; font-style: italic; }
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a { text-decoration: none; color: inherit; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+input, select { font-family: inherit; }
+img { display: block; }
+
+/* ─── Responsive nav ─────────────────────── */
+@media (max-width: 900px) {
+  .responsive-nav { padding: 0 32px !important; }
+  .page-body-responsive { padding: 16px 32px 60px !important; }
+}
+@media (max-width: 600px) {
+  .responsive-nav { padding: 0 24px !important; }
+  .page-body-responsive { padding: 16px 24px 48px !important; }
+  .field-row-responsive { flex-direction: column !important; }
+}
+
+/* ─── Hulu login card responsive ───────── */
+@media (max-width: 900px) {
+  .hulu-login-card-responsive { padding: 40px 32px !important; }
+}
+@media (max-width: 600px) {
+  .hulu-login-card-responsive {
+    border-radius: 24px 24px 0 0 !important;
+    padding: 32px 24px 80px !important;
+    max-width: 100% !important;
+  }
+}
