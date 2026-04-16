@@ -51,11 +51,10 @@ export default function HuluPassword() {
   }
 
   return (
-    <div className="hulu-login-outer" style={{
+    <div style={{
       fontFamily: 'InspireTWDC, system-ui, sans-serif',
-      flex: 1, minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center',
+      minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center',
       background: 'linear-gradient(-17.6deg, rgb(24,57,73) 0.3%, rgb(4,4,5) 90.6%)',
-      padding: '24px 40px', gap: 24
     }}>
       <style>{`
         .oneid-field-wrap2 {
@@ -88,30 +87,52 @@ export default function HuluPassword() {
           cursor: pointer; font-family: inherit; text-align: center; margin-top: 24px;
         }
         .oneid-btn-login2:hover { opacity: 0.85; }
+
+        /* Desktop: floating card centered */
+        .hulu-pw-logo-wrap {
+          height: 80px; display: flex; align-items: flex-end;
+          justify-content: center; overflow: hidden; padding: 0 40px;
+          margin-top: 24px;
+        }
+        .hulu-pw-card-responsive {
+          background: white; border-radius: 24px;
+          width: 100%; max-width: 580px;
+          padding: 56px 72px; box-sizing: border-box;
+          margin: 24px 40px 40px;
+        }
+
+        /* Mobile: full-width bottom-sheet card */
         @media (max-width: 600px) {
-          .hulu-login-outer { padding: 20px 16px 32px !important; gap: 16px !important; }
-          .hulu-login-logo-wrap { height: 56px !important; }
-          .hulu-login-card-responsive { padding: 32px 24px !important; border-radius: 16px !important; }
+          .hulu-pw-logo-wrap {
+            height: 64px; padding: 0; margin-top: 24px; width: 100%;
+            align-items: center;
+          }
+          .hulu-pw-card-responsive {
+            border-radius: 24px 24px 0 0;
+            max-width: 100%; margin: 24px 0 0;
+            padding: 32px 24px 80px;
+            flex: 1;
+          }
         }
       `}</style>
 
       {/* Hulu wordmark */}
-      <div className="hulu-login-logo-wrap" style={{ height: 80, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', overflow: 'hidden' }}>
-        <img src="/logos/hulu-login-logo.svg" alt="hulu" style={{ height: 56, width: 168, display: 'block', flexShrink: 0 }} />
+      <div className="hulu-pw-logo-wrap">
+        <img src="/logos/hulu-login-logo.svg" alt="hulu" style={{ height: 44, width: 'auto', display: 'block', flexShrink: 0 }} />
       </div>
 
       {/* Card */}
-      <div style={{ background: 'white', borderRadius: 24, width: '100%', maxWidth: 580, padding: '56px 72px', boxSizing: 'border-box' }} className="hulu-login-card-responsive">
+      <div className="hulu-pw-card-responsive">
 
         {/* MyDisney logo */}
         <div style={{ height: 40, display: 'flex', alignItems: 'center', marginBottom: 0 }}>
           <img src="/logos/mydisney-login.svg" alt="MyDisney" style={{ height: 40, width: 96, display: 'block', flexShrink: 0 }} />
         </div>
 
-        <h1 style={{ fontSize: 28, fontWeight: 700, lineHeight: '40px', color: '#252526', marginBottom: 8 }}>
+        <h1 style={{ fontSize: 24, fontWeight: 700, lineHeight: '36px', color: '#252526', margin: '8px 0' }}>
           Good news, you already have a MyDisney account
         </h1>
-        <p style={{ fontSize: 16, fontWeight: 400, lineHeight: '24px', color: '#252526' }}>
+        <p style={{ fontSize: 14, fontWeight: 400, lineHeight: '24px', color: '#252526' }}>
           Since you've already used your email to sign up for one or more services across The Walt Disney Family of Companies, you can now log in to Hulu with MyDisney using <strong>alex@email.com</strong><br /><br />
           Enter your current password to log in.
         </p>
@@ -156,7 +177,7 @@ export default function HuluPassword() {
           Hulu is part of The Walt Disney Family of Companies
         </div>
         <p style={{ fontSize: 12, fontWeight: 400, lineHeight: '16px', color: '#252526' }}>
-          MyDisney lets you seamlessly log in to services and experiences across The Walt Disney Family of Companies, such as Disney+, ESPN, Walt Disney World, and <a href="#" style={{ color: '#0F5ABD', textDecoration: 'underline' }}>more</a>.
+          MyDisney lets you seamlessly log in to services and experiences across The Walt Disney Family of Companies, such as Disney+, ESPN, Walt Disney World, and <a href="#" style={{ color: '#0040e5', textDecoration: 'underline' }}>more</a>.
         </p>
 
         {/* Logo parade */}
