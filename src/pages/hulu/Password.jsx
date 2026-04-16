@@ -51,7 +51,7 @@ export default function HuluPassword() {
   }
 
   return (
-    <div style={{
+    <div className="hulu-login-outer" style={{
       fontFamily: 'InspireTWDC, system-ui, sans-serif',
       flex: 1, minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center',
       background: 'linear-gradient(-17.6deg, rgb(24,57,73) 0.3%, rgb(4,4,5) 90.6%)',
@@ -88,10 +88,15 @@ export default function HuluPassword() {
           cursor: pointer; font-family: inherit; text-align: center; margin-top: 24px;
         }
         .oneid-btn-login2:hover { opacity: 0.85; }
+        @media (max-width: 600px) {
+          .hulu-login-outer { padding: 20px 16px 32px !important; gap: 16px !important; }
+          .hulu-login-logo-wrap { height: 56px !important; }
+          .hulu-login-card-responsive { padding: 32px 24px !important; border-radius: 16px !important; }
+        }
       `}</style>
 
       {/* Hulu wordmark */}
-      <div style={{ height: 80, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', overflow: 'hidden' }}>
+      <div className="hulu-login-logo-wrap" style={{ height: 80, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', overflow: 'hidden' }}>
         <img src="/logos/hulu-login-logo.svg" alt="hulu" style={{ height: 56, width: 168, display: 'block', flexShrink: 0 }} />
       </div>
 
