@@ -14,9 +14,8 @@ const imgPauseCalendar = 'https://www.figma.com/api/mcp/asset/75e071d2-76ff-4274
 
 function PauseIcon() {
   return (
-    <div style={{ width: 36, height: 36, overflow: 'hidden', flexShrink: 0, position: 'relative' }}>
-      <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
-        {/* Vector overlays */}
+    <div style={{ width: 36, height: 36, flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ width: 24, height: 24, position: 'relative', flexShrink: 0 }}>
         <div style={{ position: 'absolute', top: '25.43%', right: '16.96%', bottom: '64.19%', left: '16.67%' }}>
           <img src={imgPauseVector} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', display: 'block' }} />
         </div>
@@ -29,7 +28,6 @@ function PauseIcon() {
         <div style={{ position: 'absolute', top: '16.45%', right: '30.02%', bottom: '71.11%', left: '65.83%' }}>
           <img src={imgPauseGroup1} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', display: 'block' }} />
         </div>
-        {/* Calendar base */}
         <img src={imgPauseCalendar} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', display: 'block' }} />
       </div>
     </div>
@@ -50,8 +48,8 @@ function SelectionCard({ icon, iconNode, title, subtitle, onClick }) {
       onClick={onClick}
       style={{ display: 'flex', alignItems: 'flex-start', gap: 16, width: '100%', background: '#1a1d23', borderRadius: 4, padding: 16, border: 'none', cursor: 'pointer', textAlign: 'left' }}
     >
-      <div style={{ flexShrink: 0, display: 'flex', alignItems: 'center', alignSelf: 'stretch' }}>
-        {iconNode ?? <img src={icon} alt="" style={{ width: 36, height: 36, display: 'block' }} />}
+      <div style={{ width: 36, height: 36, flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', alignSelf: 'center' }}>
+        {iconNode ?? <img src={icon} alt="" style={{ width: 24, height: 'auto', display: 'block' }} />}
       </div>
       <div style={{ flex: 1, minWidth: 0 }}>
         <div style={{ fontSize: 16, fontWeight: 700, lineHeight: '24px', letterSpacing: '0.16px', color: '#f9f9f9' }}>{title}</div>
