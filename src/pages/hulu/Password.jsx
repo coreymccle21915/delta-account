@@ -76,9 +76,7 @@ export default function HuluPassword() {
           font-size: 16px; font-weight: 400; line-height: 24px; color: #252526;
           background: none; border: none; outline: none; font-family: inherit;
           width: calc(100% - 64px);
-          opacity: 0; transition: opacity 0.1s;
         }
-        .oneid-input2.active { opacity: 1; }
         .oneid-input2::placeholder { color: transparent; }
         .oneid-btn-login2 {
           display: block; width: 100%; background: black; color: white;
@@ -149,7 +147,7 @@ export default function HuluPassword() {
             className={`oneid-input2${isActive ? ' active' : ''}`}
             type={showPassword ? 'text' : 'password'}
             value={password}
-            onChange={e => setPassword(e.target.value)}
+            onChange={e => { setPassword(e.target.value); setIsActive(true) }}
             onFocus={handleFocus}
             onBlur={handleBlur}
             onKeyDown={e => e.key === 'Enter' && handleLogin()}
@@ -183,7 +181,7 @@ export default function HuluPassword() {
         {/* Logo parade */}
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 0, marginTop: 20, alignItems: 'flex-start' }}>
           {logoParade.map(logo => (
-            <img key={logo.alt} src={logo.src} alt={logo.alt} style={{ height: 32, maxHeight: 32, width: 'auto', display: 'block', flexShrink: 0, objectFit: 'contain' }} />
+            <img key={logo.alt} src={logo.src} alt={logo.alt} loading="lazy" style={{ height: 32, maxHeight: 32, width: 'auto', display: 'block', flexShrink: 0, objectFit: 'contain' }} />
           ))}
         </div>
       </div>

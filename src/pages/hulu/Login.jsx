@@ -146,7 +146,7 @@ export default function HuluLogin() {
         {/* Logo parade */}
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 0, marginTop: 20, alignItems: 'flex-start' }}>
           {logoParade.map(logo => (
-            <img key={logo.alt} src={logo.src} alt={logo.alt} style={{ height: 32, maxHeight: 32, width: 'auto', display: 'block', flexShrink: 0, objectFit: 'contain' }} />
+            <img key={logo.alt} src={logo.src} alt={logo.alt} loading="lazy" style={{ height: 32, maxHeight: 32, width: 'auto', display: 'block', flexShrink: 0, objectFit: 'contain' }} />
           ))}
         </div>
       </div>

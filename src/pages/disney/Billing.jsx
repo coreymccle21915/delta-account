@@ -187,7 +187,7 @@ function InvoiceModal({ row, user, onClose, isUpcoming }) {
           style={{
             display: 'block', width: '100%', marginTop: 32,
             background: '#4b4e5a', color: '#f9f9f9', border: 'none', borderRadius: 8,
-            height: 48, fontSize: 16, fontWeight: 600, letterSpacing: '0.16px',
+            minHeight: 48, padding: '12px 24px', fontSize: 16, fontWeight: 600, letterSpacing: '0.16px',
             cursor: 'pointer', fontFamily: 'inherit', textAlign: 'center',
           }}
         >

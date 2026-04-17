@@ -1,5 +1,18 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 import { useApp } from './context/AppContext'
+
+function ThemeColor() {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    const meta = document.querySelector('meta[name="theme-color"]')
+    if (!meta) return
+    // Hulu account has white nav; everything else is dark
+    const color = pathname === '/hulu/account' ? '#ffffff' : '#17171b'
+    meta.setAttribute('content', color)
+  }, [pathname])
+  return null
+}
 import AccountL1 from './pages/disney/AccountL1'
 import SubDetails from './pages/hulu/SubDetails'
 import Payment from './pages/disney/Payment'
@@ -19,6 +32,7 @@ function ProtectedRoute({ children }) {
 export default function App() {
   return (
     <BrowserRouter>
+      <ThemeColor />
       <Routes>
         {/* Public Disney+ routes — no auth required */}
         <Route path="/" element={<AccountL1 />} />
