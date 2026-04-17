@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import DisneyNav from '../../components/DisneyNav'
 import { useApp } from '../../context/AppContext'
 
+const imgSuccessIcon = 'https://www.figma.com/api/mcp/asset/76dccb3b-c61d-41b8-95ad-b9be6fd6344d'
+
 const SURVEY_OPTIONS = [
   'Wanted to temporarily pause my account',
   'Too much buffering or poor video quality',
@@ -66,17 +68,33 @@ export default function CancelSurvey() {
 
           {submitted ? (
             /* Survey submitted state */
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '16px 0', marginBottom: 8 }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <circle cx="12" cy="12" r="12" fill="#1a6b3c" />
-                  <path d="M7 12.5L10.5 16L17 9" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                <span style={{ fontSize: 16, fontWeight: 600, lineHeight: '24px', color: '#f9f9f9' }}>Thanks for your feedback!</span>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+              <div style={{ background: '#009963', borderRadius: 8, width: '100%' }}>
+                <div style={{ display: 'flex', alignItems: 'center', paddingRight: 24 }}>
+                  <div style={{ padding: '16px 12px 16px 24px', flexShrink: 0, display: 'flex', alignItems: 'center' }}>
+                    <div style={{
+                      width: 24, height: 24, flexShrink: 0,
+                      background: '#f7f8fa',
+                      WebkitMaskImage: `url('${imgSuccessIcon}')`,
+                      maskImage: `url('${imgSuccessIcon}')`,
+                      WebkitMaskSize: '24px 24px',
+                      maskSize: '24px 24px',
+                      WebkitMaskRepeat: 'no-repeat',
+                      maskRepeat: 'no-repeat',
+                      WebkitMaskPosition: '0px 0px',
+                      maskPosition: '0px 0px',
+                    }} />
+                  </div>
+                  <div style={{ flex: 1, minWidth: 0, paddingTop: 16, paddingBottom: 16 }}>
+                    <p style={{ fontSize: 16, fontWeight: 700, lineHeight: '24px', color: '#f9f9f9', margin: 0 }}>
+                      Thanks for your feedback!
+                    </p>
+                  </div>
+                </div>
               </div>
               <button
                 onClick={() => navigate('/')}
-                style={{ fontSize: 16, fontWeight: 600, lineHeight: '24px', color: '#33ddff', background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
+                style={{ fontSize: 16, fontWeight: 600, lineHeight: '24px', color: '#33ddff', background: 'none', border: 'none', padding: 0, cursor: 'pointer', textAlign: 'left' }}
               >
                 Back to Account
               </button>
