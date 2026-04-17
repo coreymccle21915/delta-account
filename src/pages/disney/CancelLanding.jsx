@@ -2,9 +2,39 @@ import { useNavigate } from 'react-router-dom'
 import DisneyNav from '../../components/DisneyNav'
 
 const imgSwitch = 'https://www.figma.com/api/mcp/asset/c74b4cb9-d8f1-4137-aff0-5bfe6a0891c3'
-const imgCalendar = 'https://www.figma.com/api/mcp/asset/9ee70e34-75e5-42be-96f8-abbd5729b99e'
 const imgContent = 'https://www.figma.com/api/mcp/asset/70a0aba1-cecb-4925-bdb8-f24cd26d3fa9'
 const imgSupport = 'https://www.figma.com/api/mcp/asset/6408d92c-44a9-4e87-9898-85119aed3c02'
+
+// Pause icon assets (composite layered icon)
+const imgPauseVector = 'https://www.figma.com/api/mcp/asset/b4785142-1497-44a5-9fef-f4488e5d996a'
+const imgPauseVector1 = 'https://www.figma.com/api/mcp/asset/9b6ea54a-5bc8-4283-aa4e-118aa6f9793f'
+const imgPauseGroup = 'https://www.figma.com/api/mcp/asset/b78033e7-7f15-4b58-88c4-a38b505c2c42'
+const imgPauseGroup1 = 'https://www.figma.com/api/mcp/asset/34faec49-45d2-4335-90b7-d815b16769db'
+const imgPauseCalendar = 'https://www.figma.com/api/mcp/asset/75e071d2-76ff-4274-a83a-fac5e130a67b'
+
+function PauseIcon() {
+  return (
+    <div style={{ width: 36, height: 36, overflow: 'hidden', flexShrink: 0, position: 'relative' }}>
+      <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
+        {/* Vector overlays */}
+        <div style={{ position: 'absolute', top: '25.43%', right: '16.96%', bottom: '64.19%', left: '16.67%' }}>
+          <img src={imgPauseVector} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', display: 'block' }} />
+        </div>
+        <div style={{ position: 'absolute', top: '43.44%', right: '16.96%', bottom: '19.22%', left: '16.67%' }}>
+          <img src={imgPauseVector1} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', display: 'block' }} />
+        </div>
+        <div style={{ position: 'absolute', top: '16.45%', right: '65.7%', bottom: '71.11%', left: '30.15%' }}>
+          <img src={imgPauseGroup} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', display: 'block' }} />
+        </div>
+        <div style={{ position: 'absolute', top: '16.45%', right: '30.02%', bottom: '71.11%', left: '65.83%' }}>
+          <img src={imgPauseGroup1} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', display: 'block' }} />
+        </div>
+        {/* Calendar base */}
+        <img src={imgPauseCalendar} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', display: 'block' }} />
+      </div>
+    </div>
+  )
+}
 
 function ChevronRight() {
   return (
@@ -14,14 +44,14 @@ function ChevronRight() {
   )
 }
 
-function SelectionCard({ icon, title, subtitle, onClick }) {
+function SelectionCard({ icon, iconNode, title, subtitle, onClick }) {
   return (
     <button
       onClick={onClick}
       style={{ display: 'flex', alignItems: 'flex-start', gap: 16, width: '100%', background: '#1a1d23', borderRadius: 4, padding: 16, border: 'none', cursor: 'pointer', textAlign: 'left' }}
     >
       <div style={{ flexShrink: 0, display: 'flex', alignItems: 'center', alignSelf: 'stretch' }}>
-        <img src={icon} alt="" style={{ width: 36, height: 36, display: 'block' }} />
+        {iconNode ?? <img src={icon} alt="" style={{ width: 36, height: 36, display: 'block' }} />}
       </div>
       <div style={{ flex: 1, minWidth: 0 }}>
         <div style={{ fontSize: 16, fontWeight: 700, lineHeight: '24px', letterSpacing: '0.16px', color: '#f9f9f9' }}>{title}</div>
@@ -79,7 +109,7 @@ export default function CancelLanding() {
               onClick={() => {}}
             />
             <SelectionCard
-              icon={imgCalendar}
+              iconNode={<PauseIcon />}
               title="Pause your subscription instead"
               subtitle="Need a break? Schedule a temporary pause. Resume anytime."
               onClick={() => navigate('/pause')}
