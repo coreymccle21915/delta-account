@@ -45,6 +45,16 @@ img { display: block; }
   .field-row-responsive { flex-direction: column !important; }
 }
 
+/* ─── Cancel / Pause button dock ────────── */
+@media (max-width: 900px) {
+  .cancel-btn-dock-inner { padding: 16px 32px 16px !important; }
+  .cancel-btn-dock-inner { flex-direction: column-reverse !important; align-items: stretch !important; }
+  .cancel-btn-dock-inner button { width: 100% !important; }
+}
+@media (max-width: 600px) {
+  .cancel-btn-dock-inner { padding: 16px 24px 24px !important; }
+}
+
 /* ─── Hulu login card responsive ───────── */
 @media (max-width: 900px) {
   .hulu-login-card-responsive { padding: 40px 32px !important; }

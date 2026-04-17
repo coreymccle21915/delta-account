@@ -19,6 +19,10 @@ import Payment from './pages/disney/Payment'
 import Billing from './pages/disney/Billing'
 import Invoice from './pages/disney/Invoice'
 import Nielsen from './pages/disney/Nielsen'
+import CancelLanding from './pages/disney/CancelLanding'
+import CancelSurvey from './pages/disney/CancelSurvey'
+import PauseSchedule from './pages/disney/PauseSchedule'
+import PauseSuccess from './pages/disney/PauseSuccess'
 import HuluLogin from './pages/hulu/Login'
 import HuluPassword from './pages/hulu/Password'
 import HuluAccount from './pages/hulu/Account'
@@ -37,6 +41,10 @@ export default function App() {
         {/* Public Disney+ routes — no auth required */}
         <Route path="/" element={<AccountL1 />} />
         <Route path="/subscription" element={<SubDetails />} />
+        <Route path="/cancel" element={<CancelLanding />} />
+        <Route path="/cancel/survey" element={<CancelSurvey />} />
+        <Route path="/pause" element={<PauseSchedule />} />
+        <Route path="/pause/success" element={<PauseSuccess />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/billing" element={<Billing />} />
         <Route path="/invoice" element={<Invoice />} />
