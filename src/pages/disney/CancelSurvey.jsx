@@ -26,7 +26,7 @@ function RadioOption({ label, selected, onSelect }) {
       <div style={{ flexShrink: 0, width: 48, height: 48, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{
           width: 20, height: 20, borderRadius: '50%',
-          background: selected ? '#466aef' : 'transparent',
+          background: selected ? '#056d84' : 'transparent',
           border: selected ? 'none' : '1.5px solid #6b7a94',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           flexShrink: 0,
@@ -76,7 +76,7 @@ export default function CancelSurvey() {
               </div>
               <button
                 onClick={() => navigate('/')}
-                style={{ fontSize: 16, fontWeight: 600, lineHeight: '24px', color: '#466aef', background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
+                style={{ fontSize: 16, fontWeight: 600, lineHeight: '24px', color: '#33ddff', background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
               >
                 Back to Account
               </button>
@@ -110,7 +110,7 @@ export default function CancelSurvey() {
                 </button>
                 <button
                   onClick={() => navigate('/')}
-                  style={{ fontSize: 16, fontWeight: 600, lineHeight: '24px', color: '#466aef', background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
+                  style={{ fontSize: 16, fontWeight: 600, lineHeight: '24px', color: '#33ddff', background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
                 >
                   Back to Account
                 </button>
