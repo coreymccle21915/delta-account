@@ -69,12 +69,12 @@ export default function CancelSurvey() {
           {submitted ? (
             /* Survey submitted state */
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-              <div style={{ background: '#009963', borderRadius: 8, width: '100%' }}>
+              <div style={{ background: '#0d522f', borderRadius: 8, width: '100%' }}>
                 <div style={{ display: 'flex', alignItems: 'center', paddingRight: 24 }}>
                   <div style={{ padding: '16px 12px 16px 24px', flexShrink: 0, display: 'flex', alignItems: 'center' }}>
                     <div style={{
                       width: 24, height: 24, flexShrink: 0,
-                      background: '#f7f8fa',
+                      background: '#c2edd8',
                       WebkitMaskImage: `url('${imgSuccessIcon}')`,
                       maskImage: `url('${imgSuccessIcon}')`,
                       WebkitMaskSize: '24px 24px',
