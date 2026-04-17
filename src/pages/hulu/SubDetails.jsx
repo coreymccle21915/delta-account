@@ -141,6 +141,23 @@ export default function SubDetails() {
               </div>
             </div>
 
+
+            {/* Action Buttons */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 12, width: '100%', maxWidth: 411, margin: '0 auto' }}>
+              <button
+                onClick={() => {}}
+                style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: 48, background: '#4b4e5a', color: '#f9f9f9', border: 'none', borderRadius: 8, fontSize: 16, fontWeight: 600, lineHeight: '24px', letterSpacing: '0.16px', cursor: 'pointer', padding: '12px 24px' }}
+              >
+                Pause Subscription
+              </button>
+              <button
+                onClick={() => {}}
+                style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: 48, background: 'transparent', color: '#f9f9f9', border: '2px solid #6f717b', borderRadius: 8, fontSize: 16, fontWeight: 600, lineHeight: '24px', letterSpacing: '0.16px', cursor: 'pointer', padding: '12px 24px' }}
+              >
+                Cancel Subscription
+              </button>
+            </div>
+
           </div>
         </div>
       </div>
