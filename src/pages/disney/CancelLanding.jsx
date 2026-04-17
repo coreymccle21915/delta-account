@@ -15,7 +15,7 @@ const imgPauseCalendar = 'https://www.figma.com/api/mcp/asset/75e071d2-76ff-4274
 function PauseIcon() {
   return (
     <div style={{ width: 36, height: 36, flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <div style={{ width: 24, height: 24, position: 'relative', flexShrink: 0 }}>
+      <div style={{ width: 36, height: 36, position: 'relative', flexShrink: 0 }}>
         <div style={{ position: 'absolute', top: '25.43%', right: '16.96%', bottom: '64.19%', left: '16.67%' }}>
           <img src={imgPauseVector} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', display: 'block' }} />
         </div>
